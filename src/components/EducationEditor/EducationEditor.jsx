@@ -27,48 +27,52 @@ class EducationEditor extends Component {
       <div className="education-editor">
         <form onSubmit={(e) => this.onSubmit(e)}>
           <div className="universityInput">
-            <label htmlFor="universityInput">University name</label>
-            <input
-              type="text"
-              name="universityName"
-              id="universityInput"
-              value={this.state.universityName}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              University name
+              <input
+                type="text"
+                name="universityName"
+                value={this.state.universityName}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
+            </label>
           </div>
           <div className="degreeInput">
-            <label htmlFor="degreeInput">Degree</label>
-            <input
-              type="text"
-              name="degree"
-              id="degreeInput"
-              value={this.state.degree}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              Degree
+              <input
+                type="text"
+                name="degree"
+                value={this.state.degree}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
+            </label>
           </div>
           <div className="startDateInput">
-            <label htmlFor="startDateInput">Start date</label>
-            <input
-              type="date"
-              name="startDate"
-              id="startDateInput"
-              value={this.state.startDate}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              Start date
+              <input
+                type="date"
+                name="startDate"
+                value={this.state.startDate}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
+            </label>
           </div>
           <div className="endDateInput">
-            <label htmlFor="endDateInput">End date</label>
-            <input
-              type="date"
-              name="endDate"
-              id="endDateInput"
-              value={this.state.endDate}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              End date
+              <input
+                type="date"
+                name="endDate"
+                value={this.state.endDate}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
+            </label>
           </div>
           <button type="submit">Add education</button>
         </form>

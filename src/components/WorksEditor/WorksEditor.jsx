@@ -28,61 +28,64 @@ class WorksEditor extends Component {
       <div className="works-editor">
         <form onSubmit={(e) => this.onSubmit(e)}>
           <div className="companyInput">
-            <label htmlFor="companyInput">Company name</label>
-            <input
-              type="text"
-              name="companyName"
-              id="companyInput"
-              value={this.state.companyName}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              Company name
+              <input
+                type="text"
+                name="companyName"
+                value={this.state.companyName}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
+            </label>
           </div>
           <div className="positionInput">
-            <label htmlFor="positionInput">Position</label>
-            <input
-              type="text"
-              name="position"
-              id="positionInput"
-              value={this.state.position}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              Position
+              <input
+                type="text"
+                name="position"
+                value={this.state.position}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
+            </label>
           </div>
           <div className="tasksInput">
-            <label htmlFor="tasksInput">Tasks</label>
-            <textarea
-              name="tasks"
-              id="tasksInput"
-              cols="30"
-              rows="10"
-              value={this.state.tasks}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              Tasks
+              <textarea
+                name="tasks"
+                cols="30"
+                rows="10"
+                value={this.state.tasks}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
+            </label>
           </div>
           <div className="startDateInput">
-            <label >Start date
-            <input
-              type="date"
-              name="startDate"
-              id="startDateInput"
-              value={this.state.startDate}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              Start date
+              <input
+                type="date"
+                name="startDate"
+                value={this.state.startDate}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
             </label>
           </div>
           <div className="endDateInput">
-            <label>End date
-            <input
-              type="date"
-              name="endDate"
-              id="endDateInput"
-              value={this.state.endDate}
-              onChange={(e) => this.handleInput(e)}
-              required
-            />
+            <label>
+              End date
+              <input
+                type="date"
+                name="endDate"
+                value={this.state.endDate}
+                onChange={(e) => this.handleInput(e)}
+                required
+              />
             </label>
           </div>
           <button type="submit">Add work</button>
