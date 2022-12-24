@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, 
+.app {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+input,
+textarea,
+button {
+    border-radius: 5px;
+}
+
+input {
+    height: 25px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+textarea {
+    resize: vertical;
+    padding: 3px 5px;
+}
+
+button:not(.themeChanger) {
+    font-size: 18px;
+    height: 35px;
+    border-radius: 15px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+footer {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.themeChanger {
+    background: transparent;
+    border: none;
+    height: 24px;
+}
+
+.app {
+    padding: 0 30px;
+    display: flex;
+}
+
+.cv-editor,
+.cv-preview {
+    width: 50%;
+    height: 100%;
+}
+
+.cv-editor,
+.cv-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.editor {
+    margin-bottom: 5px;
+}
+
+.editor,
+.editor form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.heading {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cv-preview > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-preview {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contacts div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.list_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.study-title,
+.position {
+    font-size: 20px;
+}
+
+.date {
+    display: flex;
+}
+
+.position {
+    margin-bottom: 5px;
+}
+
+#root {
+    flex: 1;
+}
+
+@media screen and (max-width: 700px) {
+    .app {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cv-editor,
+    .cv-preview {
+        width: 100%;
+    }
+}
