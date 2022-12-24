@@ -12,9 +12,11 @@ function CvEditor({data, handleInput, onSubmit}) {
   }
   return (
     <div className="cv-editor">
-      <PersonalEditor personal={personalData}/>
-      <EducationEditor onSubmit={onSubmit}/>
-      <WorksEditor onSubmit={onSubmit}/>
+      <div className="editors">
+        <PersonalEditor personal={personalData}/>
+        <EducationEditor onSubmit={onSubmit}/>
+        <WorksEditor onSubmit={onSubmit}/>
+      </div>
     </div>
   );
 }

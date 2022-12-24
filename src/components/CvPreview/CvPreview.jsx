@@ -11,6 +11,7 @@ function CvPreview({ data }) {
   };
   return (
     <div className="cv-preview">
+      <span className="heading">CV Preview</span>
       <PersonalPreview personal={personalInfo} />
       <EducationPreview education={data.education} />
       <WorksPreview works={data.works} />

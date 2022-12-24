@@ -24,7 +24,8 @@ class EducationEditor extends Component {
 
   render() {
     return (
-      <div className="education-editor">
+      <div className="education-editor editor">
+        <h2>Education</h2>
         <form onSubmit={(e) => this.onSubmit(e)}>
           <div className="universityInput">
             <label>

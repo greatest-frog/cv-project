@@ -1,7 +1,8 @@
 function PersonalEditor({ personal }) {
   const { name, surname, email, phone, handleInput } = personal;
   return (
-    <div className="personal-editor">
+    <div className="personal-editor editor">
+      <h2>Personal information</h2>
       <div className="nameInput">
         <label>
           Name

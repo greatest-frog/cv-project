@@ -5,7 +5,7 @@ function WorksPreview({ works }) {
       <ul className="list">
         {works.map((work, index) => {
           return (
-            <li key={index}>
+            <li key={index} className="list_item">
               <h4 className="company-name">{work.companyName}</h4>
               <div className="position">{work.position}</div>
               <div className="tasks">{work.tasks}</div>

@@ -25,7 +25,8 @@ class WorksEditor extends Component {
 
   render() {
     return (
-      <div className="works-editor">
+      <div className="works-editor editor">
+        <h2>Works</h2>
         <form onSubmit={(e) => this.onSubmit(e)}>
           <div className="companyInput">
             <label>
