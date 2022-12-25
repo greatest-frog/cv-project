@@ -1,85 +1,77 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class EducationEditor extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      universityName: "",
-      degree: "",
-      startDate: "",
-      endDate: "",
-    };
-  }
+function EducationEditor(props) {
+  const [universityName, setUniversityName] = useState("");
+  const [degree, setDegree] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
-  handleInput(e) {
-    this.setState((state) => ({
-      ...state,
-      [e.target.name]: e.target.value,
-    }));
-  }
-
-  onSubmit(e) {
-    this.props.onSubmit(e, "education", this.state);
-  }
-
-  render() {
-    return (
-      <div className="education-editor editor">
-        <h2>Education</h2>
-        <form onSubmit={(e) => this.onSubmit(e)}>
-          <div className="universityInput">
-            <label>
-              University name
-              <input
-                type="text"
-                name="universityName"
-                value={this.state.universityName}
-                onChange={(e) => this.handleInput(e)}
-                required
-              />
-            </label>
-          </div>
-          <div className="degreeInput">
-            <label>
-              Degree
-              <input
-                type="text"
-                name="degree"
-                value={this.state.degree}
-                onChange={(e) => this.handleInput(e)}
-                required
-              />
-            </label>
-          </div>
-          <div className="startDateInput">
-            <label>
-              Start date
-              <input
-                type="date"
-                name="startDate"
-                value={this.state.startDate}
-                onChange={(e) => this.handleInput(e)}
-                required
-              />
-            </label>
-          </div>
-          <div className="endDateInput">
-            <label>
-              End date
-              <input
-                type="date"
-                name="endDate"
-                value={this.state.endDate}
-                onChange={(e) => this.handleInput(e)}
-                required
-              />
-            </label>
-          </div>
-          <button type="submit">Add education</button>
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div className="education-editor editor">
+      <h2>Education</h2>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.addEducation({
+            universityName,
+            degree,
+            startDate,
+            endDate,
+          });
+        }}
+      >
+        <div className="universityInput">
+          <label>
+            University name
+            <input
+              type="text"
+              name="universityName"
+              value={universityName}
+              onChange={(e) => setUniversityName(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div className="degreeInput">
+          <label>
+            Degree
+            <input
+              type="text"
+              name="degree"
+              value={degree}
+              onChange={(e) => setDegree(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div className="startDateInput">
+          <label>
+            Start date
+            <input
+              type="date"
+              name="startDate"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div className="endDateInput">
+          <label>
+            End date
+            <input
+              type="date"
+              name="endDate"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <button type="submit">Add education</button>
+      </form>
+    </div>
+  );
 }
 
 export default EducationEditor;

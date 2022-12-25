@@ -1,47 +1,45 @@
-import { Component } from "react";
 import CvPreview from "./components/CvPreview/CvPreview";
 import CvEditor from "./components/CvEditor/CvEditor";
+import { useState } from "react";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-      surname: "",
-      email: "",
-      phone: "",
-      education: [],
-      works: [],
-    };
-  }
+function App() {
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [education, setEducation] = useState([]);
+  const [works, setWorks] = useState([]);
 
-  handleInput(e) {
-    this.setState((state) => ({
-      ...state,
-      [e.target.name]: e.target.value,
-    }));
-  }
-
-  onSubmit(e, part, obj) {
-    e.preventDefault();
-    this.setState((state) => ({
-      ...state,
-      [part]: state[part].concat(obj),
-    }));
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <CvEditor
-          data={this.state}
-          handleInput={(e) => this.handleInput(e)}
-          onSubmit={(e, part, obj) => this.onSubmit(e, part, obj)}
-        />
-        <CvPreview data={this.state} />
-      </div>
-    );
-  }
+  return (
+    <div className="app">
+      <CvEditor
+        data={{
+          name,
+          surname,
+          email,
+          phone,
+        }}
+        methods={{
+          setName: (name) => setName(name),
+          setSurname: (surname) => setSurname(surname),
+          setEmail: (email) => setEmail(email),
+          setPhone: (phone) => setPhone(phone),
+          addEducation: (e) => setEducation(education.concat(e)),
+          addWork: (work) => setWorks(works.concat(work)),
+        }}
+      />
+      <CvPreview
+        data={{
+          name,
+          surname,
+          email,
+          phone,
+          education,
+          works,
+        }}
+      />
+    </div>
+  );
 }
 
 export default App;

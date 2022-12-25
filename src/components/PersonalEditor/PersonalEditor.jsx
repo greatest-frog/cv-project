@@ -1,5 +1,6 @@
-function PersonalEditor({ personal }) {
-  const { name, surname, email, phone, handleInput } = personal;
+function PersonalEditor({ personal, methods }) {
+  const { name, surname, email, phone } = personal;
+  const { setName, setSurname, setEmail, setPhone } = methods;
   return (
     <div className="personal-editor editor">
       <h2>Personal information</h2>
@@ -10,7 +11,7 @@ function PersonalEditor({ personal }) {
             type="text"
             name="name"
             value={name}
-            onChange={(e) => handleInput(e)}
+            onChange={(e) => setName(e.target.value)}
           />
         </label>
       </div>
@@ -21,7 +22,7 @@ function PersonalEditor({ personal }) {
             type="text"
             name="surname"
             value={surname}
-            onChange={(e) => handleInput(e)}
+            onChange={(e) => setSurname(e.target.value)}
           />
         </label>
       </div>
@@ -32,7 +33,7 @@ function PersonalEditor({ personal }) {
             type="email"
             name="email"
             value={email}
-            onChange={(e) => handleInput(e)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
       </div>
@@ -43,7 +44,7 @@ function PersonalEditor({ personal }) {
             type="tel"
             name="phone"
             value={phone}
-            onChange={(e) => handleInput(e)}
+            onChange={(e) => setPhone(e.target.value)}
           />
         </label>
       </div>
